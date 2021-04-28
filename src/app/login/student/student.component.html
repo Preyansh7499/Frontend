@@ -1,0 +1,11 @@
+<h1> Login Student</h1>
+<form #loginform = "ngForm" (ngSubmit) = "onSubmitStudent(loginform.value)">
+    <input type = "number" name = "Id" placeholder="UserID" ngModel required>
+    <br>
+    <br>
+    <input type="password" name="HashPassword" placeholder="Password" ngModel required>
+    <br>
+    <br>
+<input type="submit" [disabled] = "loginform.invalid" value="Login">
+</form>
+

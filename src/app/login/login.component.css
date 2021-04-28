@@ -1,18 +1,3 @@
-.active{
-    background-color:yellow;
-}
-
-
-
-.c1{
-    align-items: center;
-    text-align: center;
-    border: 5px solid black ;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 ul {
     align-items: center;
     list-style-type: none;
