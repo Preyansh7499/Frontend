@@ -10,6 +10,10 @@ import {StudentViewComponent} from '../student/student.component';
 import {StudentAddComponent} from '../student/student-add/student-add.component';
 import {StudentDetailsComponent} from '../student/student-details/student-details.component';
 import {StudentListComponent} from '../student/student-list/student-list.component';
+import { TeachercrudComponent } from './teachercrud/teachercrud.component';
+import { TeacherlistComponent } from './teachercrud/teacherlist/teacherlist.component';
+import { TeacheraddComponent } from './teachercrud/teacheradd/teacheradd.component';
+import { TeacherdetailsComponent } from './teachercrud/teacherdetails/teacherdetails.component';
 
 const routes: Routes = [
   {path:'login', component:LoginComponent,
@@ -26,6 +30,13 @@ const routes: Routes = [
     {path :'List',component:StudentListComponent},
     {path :'Details/:id',component:StudentDetailsComponent},
     {path: 'Add',component:StudentAddComponent}
+  ]
+  },
+  {path:'teachercrud', component:TeachercrudComponent,
+  children:[
+    {path:'teacherlist', component:TeacherlistComponent},
+    {path:'teacheradd', component: TeacheraddComponent},
+    {path:'teacherdetails/:id', component:TeacherdetailsComponent}
   ]
   }
 ];

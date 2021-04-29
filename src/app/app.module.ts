@@ -20,6 +20,10 @@ import { DegreeViewCardComponent } from '../degree-view-card/degree-view-card.co
 import { TeacherViewCardComponent } from '../teacher-view-card/teacher-view-card.component';
 import { StudentAddComponent } from '../student/student-add/student-add.component';
 import { StudentUpdateComponent } from '../student/student-update/student-update.component';
+import { TeachercrudComponent } from './teachercrud/teachercrud.component';
+import { TeacherlistComponent } from './teachercrud/teacherlist/teacherlist.component';
+import { TeacheraddComponent } from './teachercrud/teacheradd/teacheradd.component';
+import { TeacherdetailsComponent } from './teachercrud/teacherdetails/teacherdetails.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +41,11 @@ import { StudentUpdateComponent } from '../student/student-update/student-update
     DegreeViewCardComponent,
     TeacherViewCardComponent,
     StudentAddComponent,
-    StudentUpdateComponent
+    StudentUpdateComponent,
+    TeachercrudComponent,
+    TeacherlistComponent,
+    TeacheraddComponent,
+    TeacherdetailsComponent
   ],
   imports: [
     BrowserModule,
