@@ -1,0 +1,39 @@
+<form [formGroup]="studentAddForm" (ngSubmit)="onSubmit(studentAddForm.value)">
+    <label>Name</label><br>
+    <input type="text" required placeholder="Name" formControlName = "name">
+    <br>
+
+    <label>Email</label><br>
+    <input type="email" required placeholder="Email" formControlName = "emailid">
+    <br>
+
+    <label>Year of joining</label><br>
+    <input type="number" required placeholder="Year"  formControlName = "yearOfJoining">
+    <br>
+
+    <label>Date of Birth</label><br>
+    <input type="date" required formControlName = "dateOfBirth"> 
+    <br>
+
+    <label>Password</label><br>
+    <input type="password" required formControlName = "password">
+    <br>
+
+    <label>Confirm Password</label><br>
+    <input type="password" required>
+    <br>
+
+    <label>Degree</label><br>
+    <select required formControlName = "degreeId">
+        <option *ngFor="let degree of degrees" [value]="degree.degreeId">{{degree.degreeName}}</option>
+    </select>
+    <br>
+
+    <label>School</label><br>
+    <select required formControlName = "schoolId">
+        <option *ngFor="let school of schools" [value]="school.schoolId">{{school.schoolName}}</option>
+    </select>
+    <br>
+
+    <input type="submit">
+</form>
