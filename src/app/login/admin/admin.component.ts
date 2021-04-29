@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from 'src/Services/login.service';
 import { Md5 } from 'ts-md5';
 
 @Component({
@@ -13,7 +14,7 @@ export class AdminComponent implements OnInit {
   HashPassword : any;
   Type : string = "admin";
 
-  constructor(private router : Router) { }
+  constructor(private router : Router, private myLoginApi:LoginService) { }
 
   ngOnInit(): void {
   }
@@ -35,8 +36,13 @@ export class AdminComponent implements OnInit {
       HashPassword : this.HashPassword,
       Type : this.Type
     };
-
     console.log(User);
+
+    this.myLoginApi.checkPassword(User).subscribe(
+      (s:any) => {
+        console.log(s);
+      }
+    )
     
 
   }

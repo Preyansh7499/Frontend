@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginStatusService } from 'src/Services/login-status.service';
+import { LoginService } from 'src/Services/login.service';
 import { Md5 } from 'ts-md5';
 
 @Component({
@@ -11,14 +13,14 @@ export class StudentComponent implements OnInit {
   Id : number;
   HashPassword : any;
   Type : string = "student";
+  Status : any;
 
-  constructor() { }
+  constructor(private myLoginApi : LoginService, private myLoginStatus : LoginStatusService, private router : Router) { }
 
   ngOnInit(): void {
   }
 
   onSubmitStudent(data:any){
-    alert("clicked");
     console.log(data);
     this.Id = data.Id;
     this.HashPassword = data.HashPassword;
@@ -37,6 +39,23 @@ export class StudentComponent implements OnInit {
     };
 
     console.log(User);
+
+    this.myLoginApi.checkPassword(User).subscribe(
+      (s:any) => {
+        console.log(s);
+        if(s.loggedIn == true)
+        { 
+            this.Status = this.myLoginStatus.checkStatusStudent(s.loggedIn)
+            console.log(this.Status);              
+            console.log("Success");
+            this.router.navigate(['/home']);
+        }
+        else{
+          alert("Login Failed");
+        }
+
+      }
+    )
   }
 
 }

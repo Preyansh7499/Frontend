@@ -2,7 +2,17 @@
 <nav>
   <ul>
 
-  <li><a routerLink="/login" routerLinkActive = "active">Login</a></li>
+
+  <li><a routerLink="/home" routerLinkActive = "active">Home</a></li>
+  
+  <li *ngIf = "studentstatus; else login">
+      <a routerLink="/login" routerLinkActive = "active">Logout</a>
+  </li>
+
+  <ng-template #login>
+      <li><a routerLink="/login" routerLinkActive = "active">Login</a></li>
+  </ng-template>
+  
 
   </ul>
 <router-outlet></router-outlet>

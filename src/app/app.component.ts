@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginStatusService } from 'src/Services/login-status.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Frontend';
+
+  studentstatus : boolean = false;
+
+  constructor(private myLoginStatus : LoginStatusService) {
+      this.studentstatus = this.myLoginStatus.returnStudentStatus();
+      console.log(this.studentstatus);
+}
 }
