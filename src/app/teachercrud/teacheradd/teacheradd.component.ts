@@ -21,7 +21,9 @@ export class TeacheraddComponent implements OnInit {
       schoolid: new FormControl(),
       designationid: new FormControl()    
     })
-  }onSubmit(data){
+  }
+  
+  onSubmit(data){
     data.password = this.HashPassword(data.password);
     this.teacherService.addTeacher(data).subscribe(
       (t:any) => {

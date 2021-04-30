@@ -24,6 +24,8 @@ import { TeachercrudComponent } from './teachercrud/teachercrud.component';
 import { TeacherlistComponent } from './teachercrud/teacherlist/teacherlist.component';
 import { TeacheraddComponent } from './teachercrud/teacheradd/teacheradd.component';
 import { TeacherdetailsComponent } from './teachercrud/teacherdetails/teacherdetails.component';
+import { TeacherupdateComponent } from './teachercrud/teacherupdate/teacherupdate.component';
+import { TeacherdeleteComponent } from './teachercrud/teacherdelete/teacherdelete.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { TeacherdetailsComponent } from './teachercrud/teacherdetails/teacherdet
     TeachercrudComponent,
     TeacherlistComponent,
     TeacheraddComponent,
-    TeacherdetailsComponent
+    TeacherdetailsComponent,
+    TeacherupdateComponent,
+    TeacherdeleteComponent
   ],
   imports: [
     BrowserModule,

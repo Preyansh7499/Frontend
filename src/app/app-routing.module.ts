@@ -14,6 +14,8 @@ import { TeachercrudComponent } from './teachercrud/teachercrud.component';
 import { TeacherlistComponent } from './teachercrud/teacherlist/teacherlist.component';
 import { TeacheraddComponent } from './teachercrud/teacheradd/teacheradd.component';
 import { TeacherdetailsComponent } from './teachercrud/teacherdetails/teacherdetails.component';
+import { TeacherupdateComponent } from './teachercrud/teacherupdate/teacherupdate.component';
+import { TeacherdeleteComponent } from './teachercrud/teacherdelete/teacherdelete.component';
 
 const routes: Routes = [
   {path:'login', component:LoginComponent,
@@ -36,7 +38,9 @@ const routes: Routes = [
   children:[
     {path:'teacherlist', component:TeacherlistComponent},
     {path:'teacheradd', component: TeacheraddComponent},
-    {path:'teacherdetails/:id', component:TeacherdetailsComponent}
+    {path:'teacherdetails/:id', component:TeacherdetailsComponent},
+    {path:'teacherupdate', component:TeacherupdateComponent},
+    {path:'teacherdelete', component:TeacherdeleteComponent}
   ]
   }
 ];

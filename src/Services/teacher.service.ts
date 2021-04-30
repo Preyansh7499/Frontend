@@ -13,8 +13,20 @@ export class TeacherService {
     return this.http.get(this.url);
   }
 
+  getTeacherById(id:number){
+    return this.http.get(this.url + "/" +  id);
+  }
+
   addTeacher(teacher){
     return this.http.post(this.url,teacher);
+  }
+
+  updateTeacher(id:number,s :any){
+    return this.http.put(this.url + "/" +id ,s);
+  }
+
+  deleteTeacher(id : number){
+    return this.http.get(this.url + "/delete/" + id);
   }
 
 }
