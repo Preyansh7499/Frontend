@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-teacher-view-card',
@@ -7,11 +8,15 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TeacherViewCardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit(): void {
   }
 
+  teacherdetails(){
+    this.router.navigate(['/teachercrud/teacherdetails/' + this.teacher.teacherId]);
+  }
+  
   @Input()
   teacher:any;
 }

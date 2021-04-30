@@ -26,6 +26,7 @@ import { TeacheraddComponent } from './teachercrud/teacheradd/teacheradd.compone
 import { TeacherdetailsComponent } from './teachercrud/teacherdetails/teacherdetails.component';
 import { TeacherupdateComponent } from './teachercrud/teacherupdate/teacherupdate.component';
 import { TeacherdeleteComponent } from './teachercrud/teacherdelete/teacherdelete.component';
+import { TeacherupdatebyidComponent } from './teachercrud/teacherupdatebyid/teacherupdatebyid.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { TeacherdeleteComponent } from './teachercrud/teacherdelete/teacherdelet
     TeacheraddComponent,
     TeacherdetailsComponent,
     TeacherupdateComponent,
-    TeacherdeleteComponent
+    TeacherdeleteComponent,
+    TeacherupdatebyidComponent
   ],
   imports: [
     BrowserModule,

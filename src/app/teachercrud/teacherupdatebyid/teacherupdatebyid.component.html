@@ -1,15 +1,4 @@
-<form [formGroup]="teacherGetByIdForm" (ngSubmit)="onSubmitId(teacherGetByIdForm.value)">
-
-    <label>Enter an ID</label><br>
-    <input type="number" required placeholder="Tid" formControlName = "tid">
-
-    <input type="submit" value = " Search ">
-</form>
-
-
-
-
-<form *ngIf = "teacher; else load" [formGroup]="teacherUpdateForm" (ngSubmit)="onSubmit(teacherUpdateForm.value)">
+<form [formGroup]="teacherUpdateForm" (ngSubmit)="onSubmit(teacherUpdateForm.value)">
 
     <label>Name</label><br>
     <input type="text" required placeholder="Name" formControlName = "name">
@@ -27,9 +16,7 @@
     <input type="number" required placeholder="DesignationId" formControlName = "designationid">
     <br>
 
-    <input type="submit" value = "update">
+    <input type="submit" value = "Update">
+    <input type="button" value = "Delete" (click) = "delete()">
+    <input type="button" value = "Back" (click) = "back()">
 </form>
-
-<ng-template #load>
-    <h1> Enter an Id to search</h1>
-</ng-template>

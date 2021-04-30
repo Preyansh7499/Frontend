@@ -1,18 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TeacherService } from 'src/Services/teacher.service';
-import { Md5 } from 'ts-md5';
 
 @Component({
-  selector: 'app-teacherupdate',
-  templateUrl: './teacherupdate.component.html',
-  styleUrls: ['./teacherupdate.component.css']
+  selector: 'app-teacherupdatebyid',
+  templateUrl: './teacherupdatebyid.component.html',
+  styleUrls: ['./teacherupdatebyid.component.css']
 })
-export class TeacherupdateComponent implements OnInit {
+export class TeacherupdatebyidComponent implements OnInit {
   teacherUpdateForm : FormGroup;
-  teacherGetByIdForm : FormGroup;
+  Tid:any;
   teacher : any;
-  Tid :any;
   Tname : string;
   Tpassword :string;
   Temailid : string;
@@ -22,25 +21,8 @@ export class TeacherupdateComponent implements OnInit {
   imagepath : string;
   password : string;
 
-  constructor(private teacherService : TeacherService) { }
-
-  ngOnInit(): void {
-    this.teacherGetByIdForm = new FormGroup({
-      tid: new FormControl()
-    })
-
-    this.teacherUpdateForm = new FormGroup({
-      
-      name: new FormControl(),
-      emailid: new FormControl(),
-      schoolid: new FormControl(),
-      designationid: new FormControl()    
-    })
-  }
-  onSubmitId(data){
-    console.log(data.tid);
-    this.Tid = data.tid;
-    
+  constructor(private teacherService : TeacherService, private router : Router, ar :ActivatedRoute) {
+    this.Tid = ar.snapshot.params['id'];
     this.teacherService.getTeacherById(this.Tid).subscribe(
       (e : any) => {
         this.teacher = e;
@@ -62,7 +44,16 @@ export class TeacherupdateComponent implements OnInit {
         console.log(err);
       }
     )
-    
+
+   }
+
+  ngOnInit(): void {
+    this.teacherUpdateForm = new FormGroup({
+      name: new FormControl,
+      emailid: new FormControl(),
+      schoolid: new FormControl(),
+      designationid: new FormControl()    
+    })
   }
 
   onSubmit(data){
@@ -90,11 +81,6 @@ export class TeacherupdateComponent implements OnInit {
         console.log(err);
       }
     )
-    this.teacherGetByIdForm.patchValue(
-      {
-        tid : null
-      }
-    )
     this.teacherUpdateForm.patchValue(
       {
         name : null,
@@ -104,8 +90,28 @@ export class TeacherupdateComponent implements OnInit {
       }
     )
     this.teacher = null;
+  }
 
-    
+  delete(){
+    console.log("start" + this.Tid);
+    this.teacherService.deleteTeacher(this.Tid).subscribe(
+      (e : any) => {
+        console.log("mid-1");
+        console.log(e);
+        alert("Deleted");
+        this.router.navigate(['/teachercrud/teacherlist/'])
+      },
+      err => {
+        console.log("mid-2");
+        alert("error occured");
+        console.log(err);
+      }
+    )
+   console.log("end");
+  }
+
+  back(){
+    this.router.navigate(['/teachercrud/teacherlist/'])
   }
 
 }

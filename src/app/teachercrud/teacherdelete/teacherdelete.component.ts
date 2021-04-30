@@ -11,6 +11,7 @@ export class TeacherdeleteComponent implements OnInit {
   teacherDeleteForm : FormGroup;
   teacherGetByIdForm : FormGroup;
   Tid :any;
+  teacher : any;
 
 
   constructor(private teacherService : TeacherService) { }
@@ -35,7 +36,8 @@ export class TeacherdeleteComponent implements OnInit {
     
     this.teacherService.getTeacherById(this.Tid).subscribe(
       (e : any) => {
-        console.log(e);        
+        console.log(e);
+        this.teacher = e;        
         this.teacherDeleteForm.patchValue(
           {
             name : e.name,
@@ -78,6 +80,8 @@ export class TeacherdeleteComponent implements OnInit {
         designationid : null
       }
     )
+    this.teacher = null;
+
 
     
   }

@@ -1,5 +1,10 @@
 <hr>
+    Teacher Id: {{teacher.teacherId}}<br>
     Register Number: {{teacher.registerNumber}}<br>
     Name : {{teacher.name}}<br>
     emailid : {{teacher.emailid}}<br>
 <hr>
+<form #detailsform = "ngForm" (ngSubmit) = "teacherdetails()">
+    <input type="submit" [disabled] = "detailsform.invalid" value="Details">
+</form>
+
