@@ -1,0 +1,19 @@
+<h2> Details of School {{id}} </h2>
+
+<table  border="1">
+    <tr>
+    <th>School Name</th>
+    <th>Building Name</th>
+    <th>Hod Name</th>
+    <th>Dean Name</th>
+    </tr>
+    <tr>
+        <td>{{SchoolDetails.schoolName}}</td>
+        <td>{{SchoolDetails.buildingName}}</td>
+        <td>{{SchoolDetails.hod.name}}</td>
+        <td>{{SchoolDetails.dean.name}}</td>
+
+    </tr>
+</table>
+<br>
+<input type="button" value="Update" (click)="NavigateToUpdate()">

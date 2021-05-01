@@ -13,7 +13,7 @@ export class TeacherdetailsComponent implements OnInit {
 
   constructor(ar : ActivatedRoute, private teacherService : TeacherService, private router : Router) {
     this.id = ar.snapshot.params['id'];
-    teacherService.getTeacherById(this.id).subscribe((e:any) => {this.TeacherDetails = e})
+    teacherService.getTeacherById(this.id).subscribe((e:any) => {this.TeacherDetails = e ; console.log(this.TeacherDetails);})
    }
 
    NavigateToUpdate(){

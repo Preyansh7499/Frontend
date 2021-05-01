@@ -17,6 +17,13 @@ import { TeacherdetailsComponent } from './teachercrud/teacherdetails/teacherdet
 import { TeacherupdateComponent } from './teachercrud/teacherupdate/teacherupdate.component';
 import { TeacherdeleteComponent } from './teachercrud/teacherdelete/teacherdelete.component';
 import { TeacherupdatebyidComponent } from './teachercrud/teacherupdatebyid/teacherupdatebyid.component';
+import { SchoolcrudComponent } from './schoolcrud/schoolcrud.component';
+import { SchoollistComponent } from './schoolcrud/schoollist/schoollist.component';
+import { SchooldetailsComponent } from './schoolcrud/schooldetails/schooldetails.component';
+import { SchooladdComponent } from './schoolcrud/schooladd/schooladd.component';
+import { SchoolteacherlisthodComponent } from './schoolcrud/schoolteacherlisthod/schoolteacherlisthod.component';
+import { SchoolteacherlistdeanComponent } from './schoolcrud/schoolteacherlistdean/schoolteacherlistdean.component';
+import { SchooldeleteComponent } from './schoolcrud/schooldelete/schooldelete.component';
 
 const routes: Routes = [
   {path:'login', component:LoginComponent,
@@ -44,7 +51,16 @@ const routes: Routes = [
     {path:'teacherdelete', component:TeacherdeleteComponent},
     {path:'teacherupdatebyid/:id',component:TeacherupdatebyidComponent}
   ]
-  }
+  },
+  {path:'schoolcrud', component:SchoolcrudComponent,
+   children:[
+    {path:'schoollist', component:SchoollistComponent},
+    {path:'schooldetails/:id', component:SchooldetailsComponent},
+    {path:'schooladd', component:SchooladdComponent},
+    {path:'schoolteacherlisthod', component: SchoolteacherlisthodComponent},
+    {path:'schoolteacherlistdean', component: SchoolteacherlistdeanComponent},
+    {path:'schooldelete', component: SchooldeleteComponent}
+  ]}
 ];
 
 @NgModule({

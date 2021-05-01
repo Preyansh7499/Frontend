@@ -1,4 +1,9 @@
 <hr>
+School Id :{{school.schoolId}}<br>
 School Name: {{school.schoolName}}<br>
 Building Name : {{school.buildingName}}<br>
 <hr>
+
+<form #detailsform = "ngForm" (ngSubmit) = "schooldetails()">
+    <input type="submit" [disabled] = "detailsform.invalid" value="More Details">
+</form>
