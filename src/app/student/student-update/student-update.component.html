@@ -1,6 +1,9 @@
-<form [formGroup]="studentIdForm" (ngSubmit)="onSubmitId(studentIdForm.value)">
-    <input required type="number" formControlName="studentId">
-    <input type="submit">
+<h1>Update Student</h1>
+
+
+<form class="form-inline" [formGroup]="studentIdForm" (ngSubmit)="onSubmitId(studentIdForm.value)">
+    <input class="mx-1" placeholder="Student Id" required type="number" formControlName="studentId">
+    <input value="Search" class=" btn btn-secondary mb-2" type="submit">
 </form>
 
 <div *ngIf="student; else SelectStudentId">
@@ -40,8 +43,8 @@
             <option *ngFor="let school of schools" [value]="school.schoolId">{{school.schoolName}}</option>
         </select>
         <br>
-    
-        <input type="submit">
+        <br>
+        <input class="btn btn-success" type="submit">
     </form>
 </div>
 <ng-template #SelectStudentId>

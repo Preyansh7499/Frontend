@@ -8,13 +8,15 @@
     <hr>
     <h1>Proctor Details</h1>
     <app-teacher-view-card [teacher]="student.proctor"></app-teacher-view-card>
-    <button (click)="RouteRedirectToProctor(student.studentId)">Update Proctor</button>
+    <button class="btn btn-primary" (click)="RouteRedirectToProctor(student.studentId)">Update Proctor</button>
     <h1>Degree Details</h1>
     <app-degree-view-card [degree]="student.degree"></app-degree-view-card>
     <h1>School Details</h1>
     <app-school-view-card [school]="student.school"></app-school-view-card>
-    <button (click)="RouteRedirectToUpdate(student.studentId)">Update Student</button>
-    <button (click)="RouteRedirectToDelete(student.studentId)">Delete Student</button>
+    
+    <button class="btn btn-primary"  (click)="RouteRedirectToUpdate(student.studentId)">Update Student</button>
+    |
+    <button class="btn btn-danger" (click)="RouteRedirectToDelete(student.studentId)">Delete Student</button>
 </div>
 <ng-template #loading>
     <h1>...Loading</h1>

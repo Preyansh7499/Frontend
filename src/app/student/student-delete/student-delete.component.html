@@ -1,10 +1,10 @@
+<h1>Delete Student</h1>
 <form [formGroup]="studentIdForm" (ngSubmit)="onSubmitId(studentIdForm.value)">
-    <input required type="number" formControlName="studentId">
-    <input type="submit">
+    <input class="mx-1" placeholder="Student Id" required type="number" formControlName="studentId">
+    <input value="Search" class=" btn btn-secondary mb-2" type="submit">
 </form>
 
 <div *ngIf="deleteStudent">
-    <button (click)="deleteStudentbyId()">Delete</button>
     <hr>
     <h1>Student Details</h1>
     Name:{{deleteStudent.name}}<br>
@@ -18,5 +18,7 @@
     <app-degree-view-card [degree]="deleteStudent.degree"></app-degree-view-card>
     <h1>School Details</h1>
     <app-school-view-card [school]="deleteStudent.school"></app-school-view-card>
+    <button class="btn  btn-danger" (click)="deleteStudentbyId()">Delete</button>
+    
 </div>
     

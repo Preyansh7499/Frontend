@@ -1,7 +1,7 @@
-
+<h1>Set Proctor</h1>
 <form [formGroup]="studentIdForm" (ngSubmit)="onSubmitId(studentIdForm.value)">
-    <input required type="number" formControlName="studentId">
-    <input type="submit">
+    <input class="mx-1" placeholder="Student Id" required type="number" formControlName="studentId">
+    <input class="btn btn-secondary" type="submit">
 </form>
 
 
@@ -19,7 +19,7 @@
             Register Number: {{t.registerNumber}}<br>
             Name : {{t.name}}<br>
             emailid : {{t.emailid}}<br>
-            <button (click)="setProctor(t.teacherId)">Make Proctor</button>
+            <button class="btn btn-success" (click)="setProctor(t.teacherId)">Make Proctor</button>
         <hr>
     </div>
 </div>
