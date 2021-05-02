@@ -1,9 +1,45 @@
-<h1>Student Details</h1>
-<nav>
-    <li><a routerLink="List">List</a></li>
-    <li><a routerLink="Add">Add</a></li>
-    <li><a routerLink="Update">Update</a></li>
-    <li><a routerLink="Delete">Delete</a></li>
-    <li><a routerLink="Proctor">Proctor</a></li>
-</nav>
-<router-outlet></router-outlet>
+<div class="container-fluid" id="Board">
+    <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <div class="position-sticky pt-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" routerLink="List" routerLinkActive="active">
+                          <span data-feather="home"></span>
+                          List
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" routerLink="Add" routerLinkActive="active">
+                          <span data-feather="home"></span>
+                          Add
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" routerLink="Update">
+                          <span data-feather="home"></span>
+                          Update
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" routerLink="Delete">
+                          <span data-feather="home"></span>
+                          Delete
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" routerLink="Proctor">
+                          <span data-feather="home"></span>
+                          Proctor
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <router-outlet></router-outlet>
+        </main>
+    </div>
+</div>
