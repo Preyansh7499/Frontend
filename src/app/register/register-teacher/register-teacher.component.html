@@ -6,13 +6,10 @@
 </form>
 
 <div *ngIf="teacher; else select">
-    <hr>
-        Name:{{teacher.name}}
-        Id : {{teacher.teacherId}}
-    <hr>
+    <app-teacher-view-card [teacher]="teacher"></app-teacher-view-card>
     <nav>
-        <li><a routerLink="list/{{tid}}" (click)="refresh()">List</a></li>
-        <li><a routerLink="enroll/{{tid}}" (click)="refresh()">Enroll</a></li>        
+        <a class="btn btn-dark" routerLink="list/{{tid}}" (click)="refresh()">List</a>
+        |<a class="btn btn-dark" routerLink="enroll/{{tid}}" (click)="refresh()">Enroll</a>
     </nav>
 
 </div>

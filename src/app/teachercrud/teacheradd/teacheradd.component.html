@@ -1,3 +1,4 @@
+<h1>Add Teacher</h1>
 <form [formGroup]="teacherAddForm" (ngSubmit)="onSubmit(teacherAddForm.value)">
     <label>Name</label><br>
     <input type="text" required placeholder="Name" formControlName = "name">
@@ -22,6 +23,6 @@
     <label>Confirm Password</label><br>
     <input type="password" required>
     <br>
-
-    <input type="submit">
+<br>
+    <input class="btn btn-success" type="submit">
 </form>

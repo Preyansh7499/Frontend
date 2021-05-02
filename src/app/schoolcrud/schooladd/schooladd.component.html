@@ -1,3 +1,4 @@
+<h1>School Add</h1>
 <form  [formGroup]="schoolAddForm" (ngSubmit)="onSubmit(schoolAddForm.value)">
     <label>Name</label><br>
     <input type="text" required placeholder="School Name" formControlName = "schoolName">
@@ -8,7 +9,7 @@
     <br>
     <br>
 
-    <input type="submit">
+    <input class="btn btn-success" value="Add" type="submit">
 </form>
 <br><br>
 

@@ -1,14 +1,36 @@
-<nav>
-    <ul>
-        <li><a routerLink="/schoolcrud/schoollist" routerLinkActive = "active" Highlight>School List</a></li>
-        <br>
-        <br>
-        <li><a routerLink="/schoolcrud/schooladd" routerLinkActive = "active" Highlight>School Add</a></li>
-        <br>
-        <br>
-        <li><a routerLink="/schoolcrud/schooldelete" routerLinkActive = "active" Highlight>School Delete</a></li>
 
-    </ul>
+<div class="container-fluid" id="Board">
+    <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <div class="position-sticky pt-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" routerLink="/schoolcrud/schoollist" routerLinkActive="active">
+                          <span data-feather="home"></span>
+                          School List
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" routerLink="/schoolcrud/schooladd" routerLinkActive="active">
+                          <span data-feather="home"></span>
+                          Add
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" routerLink="/schoolcrud/schooldelete" routerLinkActive="active">
+                          <span data-feather="home"></span>
+                          Delete
+                        </a>
+                    </li>
+                   
+                 </ul>
 
-</nav>  
-<router-outlet></router-outlet>
+            </div>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <router-outlet></router-outlet>
+        </main>
+    </div>
+</div>
+

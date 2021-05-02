@@ -7,8 +7,10 @@
     Teachers
     <br>
     <select (click)="loadTeachers()" required formControlName ="taughtById">
+        <option selected>Select Teacher</option>
         <option *ngFor="let t of taughtBy" [value]=t.taughtById>{{t.teacher.registerNumber}} {{t.teacher.name}}</option>
     </select>
     <br>
-    <input type="submit" value="enroll">
+    <br>
+    <input class="btn btn-success" type="submit" value="enroll">
 </form>

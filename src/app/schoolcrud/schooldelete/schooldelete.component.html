@@ -1,9 +1,10 @@
+<h1>School Delete</h1>
 <form [formGroup]="schoolGetByIdForm" (ngSubmit)="onSubmitId(schoolGetByIdForm.value)">
 
     <label>Enter an ID</label><br>
-    <input type="number" required placeholder="School id" formControlName = "sid">
+    <input class="mx-1" type="number" required placeholder="School id" formControlName = "sid">
 
-    <input type="submit" value = " Search ">
+    <input class="btn btn-secondary" type="submit" value = " Search ">
 </form>
 
 <form *ngIf = "school; else load" [formGroup]="schoolDeleteForm" (ngSubmit)="onSubmit(schoolDeleteForm.value)">
