@@ -1,0 +1,11 @@
+<div *ngFor="let c of courses">
+    <hr>
+        Course ID:{{c.courseId}}<br>
+        Course Name:{{c.courseName}}<br>
+        Credits:{{c.credits}}<br>
+        Course Type:{{c.courseType}}<br>
+        Course Status:{{c.courseStatus}}<br>
+        <button (click)="register(c.courseId)">register</button>
+    <hr>
+</div>
+

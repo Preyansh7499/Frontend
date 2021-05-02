@@ -1,0 +1,11 @@
+<h1>Student Courses</h1>
+<form [formGroup]="studentIdForm" (ngSubmit)="onSubmitId(studentIdForm.value)">
+    <input required type="number" formControlName="studentId">
+    <input type="submit">
+</form>
+<ng-template #NoStudent>
+    <h1>No Such Student Exists</h1>
+</ng-template>
+
+<router-outlet></router-outlet>
+<app-student-course-page [sid]="student_id"></app-student-course-page>

@@ -1,0 +1,14 @@
+<form [formGroup]="EnrollCourseForm" (ngSubmit)="onSubmit(EnrollCourseForm.value)">
+    Courses<br>
+    <select required formControlName ="courseId" >
+        <option *ngFor="let c of courses" [value]="c.courseId">{{c.courseId}} {{c.courseName}}</option>
+    </select>
+    <br>
+    Teachers
+    <br>
+    <select (click)="loadTeachers()" required formControlName ="taughtById">
+        <option *ngFor="let t of taughtBy" [value]=t.taughtById>{{t.teacher.registerNumber}} {{t.teacher.name}}</option>
+    </select>
+    <br>
+    <input type="submit" value="enroll">
+</form>

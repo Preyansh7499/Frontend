@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginStatusService } from 'src/Services/login-status.service';
-import { LoginService } from 'src/Services/login.service';
+import { LoginStatusService } from 'src/app/Services/login-status.service';
+import { LoginService } from 'src/app/Services/login.service';
+
 import { Md5 } from 'ts-md5';
 
 @Component({

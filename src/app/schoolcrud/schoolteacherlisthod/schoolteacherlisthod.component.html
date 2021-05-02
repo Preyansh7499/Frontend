@@ -1,0 +1,21 @@
+<table border = 1>
+    <th>Teacher Id</th>
+    <th>Register Number</th>
+    <th>Name</th>
+    <th>Email-id</th>
+    <th>School Id</th>
+    <th>Designation Id</th>
+    <th>Make HOD</th>
+<tr *ngFor = "let t of teachers"> 
+    <td>{{t.teacherId}}</td>
+    <td>{{t.registerNumber}}</td>
+    <td>{{t.name}}</td>
+    <td>{{t.emailid}}</td>
+    <td>{{t.schoolId}}</td>
+    <td>{{t.designationId}}</td>
+    <td><input type="button" value = "Make HOD" (click) = "make()"></td>
+<tr>
+</table>
+
+
+

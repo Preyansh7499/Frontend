@@ -1,0 +1,24 @@
+<h1>Student</h1>
+
+<form [formGroup]="studentIdForm" (ngSubmit)="onSubmitId(studentIdForm.value)">
+    <input required type="number" formControlName="studentId">
+    <input type="submit">
+</form>
+
+<div *ngIf="student; else select">
+    <hr>
+        Name:{{student.name}}
+        Id : {{student.studentId}}
+    <hr>
+    <nav>
+        <li><a routerLink="list/{{sid}}" (click)="refresh()">List</a></li>
+        <li><a routerLink="enroll/{{sid}}" (click)="refresh()">Enroll</a></li>        
+    </nav>
+
+</div>
+<ng-template #select>
+    <h1>Select valid student id</h1>
+</ng-template>
+<div *ngIf="show">
+    <router-outlet></router-outlet>
+</div>

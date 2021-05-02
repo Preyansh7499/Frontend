@@ -1,6 +1,7 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
-import { LoginStatusService } from 'src/Services/login-status.service';
+import { LoginStatusService } from '../Services/login-status.service';
+
 
 @Component({
   selector: 'app-home',

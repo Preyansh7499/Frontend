@@ -1,0 +1,31 @@
+
+
+<div>
+    <div *ngIf="studentsCourses; else Loading">
+        <table>
+            <tr>
+                <th>Course Name</th>
+                <th>Credits</th>
+                <th>Type</th>
+                <th>Status</th>
+                <th>Teacher ID</th>
+                <th>Teacher Name</th>
+                <th>Unenroll</th>
+            </tr>
+            <tr *ngFor="let c of studentsCourses">
+                <td>{{c.course.courseName}}</td>
+                <td>{{c.course.credits}}</td>
+                <td>{{c.course.courseType}}</td>
+                <td>{{c.course.courseStatus}}</td>
+                <td>{{c.teacher.registerNumber}}</td>
+                <td>{{c.teacher.name}}</td>
+                <td><button (click)="unenroll(sid,c.registerdId)">UnEnroll</button></td>
+            </tr>
+        </table>
+    </div>
+</div>
+    
+
+<ng-template #Loading>
+<h1>..loading</h1>
+</ng-template>

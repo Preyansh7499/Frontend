@@ -1,0 +1,49 @@
+<form [formGroup]="studentIdForm" (ngSubmit)="onSubmitId(studentIdForm.value)">
+    <input required type="number" formControlName="studentId">
+    <input type="submit">
+</form>
+
+<div *ngIf="student; else SelectStudentId">
+    <form [formGroup]="studentUpdateForm" (ngSubmit)="onSubmitUpdate(studentUpdateForm.value)">
+        <label>Name</label><br>
+        <input type="text" required placeholder="Name" formControlName = "name">
+        <br>
+    
+        <label>Email</label><br>
+        <input type="email" required placeholder="Email" formControlName = "emailid">
+        <br>
+    
+        <label>Year of joining</label><br>
+        <input type="number" required placeholder="Year"  formControlName = "yearOfJoining">
+        <br>
+    
+        <label>Date of Birth</label><br>
+        <input type="date" required formControlName = "dateOfBirth"> 
+        <br>
+    
+        <label>Password</label><br>
+        <input type="password" required formControlName = "password">
+        <br>
+    
+        <label>Confirm Password</label><br>
+        <input type="password" required>
+        <br>
+    
+        <label>Degree</label><br>
+        <select required formControlName = "degreeId">
+            <option *ngFor="let degree of degrees" [value]="degree.degreeId">{{degree.degreeName}}</option>
+        </select>
+        <br>
+    
+        <label>School</label><br>
+        <select required formControlName = "schoolId">
+            <option *ngFor="let school of schools" [value]="school.schoolId">{{school.schoolName}}</option>
+        </select>
+        <br>
+    
+        <input type="submit">
+    </form>
+</div>
+<ng-template #SelectStudentId>
+    <h1>Please select student ID</h1>
+</ng-template>

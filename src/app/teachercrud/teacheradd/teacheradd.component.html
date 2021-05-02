@@ -1,0 +1,27 @@
+<form [formGroup]="teacherAddForm" (ngSubmit)="onSubmit(teacherAddForm.value)">
+    <label>Name</label><br>
+    <input type="text" required placeholder="Name" formControlName = "name">
+    <br>
+
+    <label>Email</label><br>
+    <input type="email" required placeholder="Email" formControlName = "emailid">
+    <br>
+
+    <label>SchoolId</label><br>
+    <input type="number" required placeholder="SchoolId" formControlName = "schoolid">
+    <br>
+
+    <label>DesignationId</label><br>
+    <input type="number" required placeholder="DesignationId" formControlName = "designationid">
+    <br>
+
+    <label>Password</label><br>
+    <input type="password" required formControlName = "password">
+    <br>
+
+    <label>Confirm Password</label><br>
+    <input type="password" required>
+    <br>
+
+    <input type="submit">
+</form>

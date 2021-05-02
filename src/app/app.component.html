@@ -1,11 +1,14 @@
-<h1 class = "c1" Highlight>Deployment</h1>
+<h1 class = "c1" Highlight>Deployment V2</h1>
 <nav>
   <ul>
 
 
   <li><a routerLink="/home" routerLinkActive = "active">Home</a></li>
   <li><a routerLink="/Students" routerLinkActive = "active">Students</a></li>
-  
+  <li><a routerLink="/teachercrud" routerLinkActive = "active">Teacher</a></li>
+  <li><a routerLink="/schoolcrud" routerLinkActive = "active">Schools</a></li>
+  <li><a routerLink="/Register">Register</a></li>
+  <li><a routerLink="/CoursePage">Course Page</a></li>
   <li *ngIf = "studentstatus; else login">
       <a routerLink="/login" routerLinkActive = "active">Logout</a>
   </li>

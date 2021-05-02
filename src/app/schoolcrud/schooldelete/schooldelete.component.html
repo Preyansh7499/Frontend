@@ -1,0 +1,32 @@
+<form [formGroup]="schoolGetByIdForm" (ngSubmit)="onSubmitId(schoolGetByIdForm.value)">
+
+    <label>Enter an ID</label><br>
+    <input type="number" required placeholder="School id" formControlName = "sid">
+
+    <input type="submit" value = " Search ">
+</form>
+
+<form *ngIf = "school; else load" [formGroup]="schoolDeleteForm" (ngSubmit)="onSubmit(schoolDeleteForm.value)">
+
+    <label>School Name</label><br>
+    <input type="text" required placeholder="Name" formControlName = "sname">
+    <br>
+
+    <label>Building Name</label><br>
+    <input type="text" required placeholder="Buildingname" formControlName = "bname">
+    <br>
+
+    <label>Hod Name</label><br>
+    <input type="text" required placeholder="HOD name" formControlName = "hname">
+    <br>
+
+    <label>Dean Name</label><br>
+    <input type="text" required placeholder="Dean Name" formControlName = "dname">
+    <br>
+
+    <input type="submit" value = "Delete ">
+</form>
+
+<ng-template #load>
+    <h1> Enter an Id to search</h1>
+</ng-template>

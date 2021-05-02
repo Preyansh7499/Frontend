@@ -1,0 +1,26 @@
+<p>teaching-list works!</p>
+<div>
+    <div *ngIf="teacherCourses; else Loading">
+        <table>
+            <tr>
+                <th>Course Name</th>
+                <th>Credits</th>
+                <th>Type</th>
+                <th>Status</th>
+                <th>Unenroll</th>
+            </tr>
+            <tr *ngFor="let c of teacherCourses">
+                <td>{{c.course.courseName}}</td>
+                <td>{{c.course.credits}}</td>
+                <td>{{c.course.courseType}}</td>
+                <td>{{c.course.courseStatus}}</td>
+                <td><button (click)="unenroll(tid,c.taughtById)">UnEnroll</button></td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+<ng-template #Loading>
+<h1>..loading</h1>
+</ng-template>

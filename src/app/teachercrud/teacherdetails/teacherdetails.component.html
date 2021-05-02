@@ -1,0 +1,20 @@
+<h2> Details of teacher {{id}} </h2>
+
+<table  border="1">
+    <tr>
+    <th>Registeration Number</th>
+    <th>Name</th>
+    <th>SchoolID</th>
+    <th>DesignationID</th>
+    </tr>
+    <tr>
+        <td>{{TeacherDetails.registerNumber}}</td>
+        <td>{{TeacherDetails.name}}</td>
+        <td>{{TeacherDetails.schoolId}}</td>
+        <td>{{TeacherDetails.designationId}}</td>
+    </tr>
+</table>
+<br>
+<input type="button" value="Update" (click)="NavigateToUpdate()">
+
+

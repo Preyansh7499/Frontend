@@ -1,0 +1,25 @@
+
+<form [formGroup]="studentIdForm" (ngSubmit)="onSubmitId(studentIdForm.value)">
+    <input required type="number" formControlName="studentId">
+    <input type="submit">
+</form>
+
+
+<div *ngIf="!isProctorNull(proctor); else NoProctor">
+    <h1>Proctor</h1>
+    <app-teacher-view-card [(teacher)]="proctor"></app-teacher-view-card>
+</div>
+<ng-template #NoProctor>
+    <h1>The student has no proctor</h1>
+</ng-template>
+<div *ngIf="student">
+    <h1>Teachers</h1>    
+    <div *ngFor="let t of teacherList">
+        <hr>
+            Register Number: {{t.registerNumber}}<br>
+            Name : {{t.name}}<br>
+            emailid : {{t.emailid}}<br>
+            <button (click)="setProctor(t.teacherId)">Make Proctor</button>
+        <hr>
+    </div>
+</div>
