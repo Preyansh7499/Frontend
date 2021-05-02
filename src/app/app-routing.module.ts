@@ -24,6 +24,7 @@ import { SchooladdComponent } from './schoolcrud/schooladd/schooladd.component';
 import { SchoolteacherlisthodComponent } from './schoolcrud/schoolteacherlisthod/schoolteacherlisthod.component';
 import { SchoolteacherlistdeanComponent } from './schoolcrud/schoolteacherlistdean/schoolteacherlistdean.component';
 import { SchooldeleteComponent } from './schoolcrud/schooldelete/schooldelete.component';
+import { HomeAfterLoginComponent } from './home-after-login/home-after-login.component';
 
 const routes: Routes = [
   {path:'login', component:LoginComponent,
@@ -35,13 +36,14 @@ const routes: Routes = [
   },
   {path : 'home', component:HomeComponent},
   
-  { path:'Students',component:StudentViewComponent,
+  {path:'Students',component:StudentViewComponent,
   children:[
     {path :'List',component:StudentListComponent},
     {path :'Details/:id',component:StudentDetailsComponent},
     {path: 'Add',component:StudentAddComponent}
   ]
   },
+
   {path:'teachercrud', component:TeachercrudComponent,
   children:[
     {path:'teacherlist', component:TeacherlistComponent},
@@ -52,6 +54,7 @@ const routes: Routes = [
     {path:'teacherupdatebyid/:id',component:TeacherupdatebyidComponent}
   ]
   },
+
   {path:'schoolcrud', component:SchoolcrudComponent,
    children:[
     {path:'schoollist', component:SchoollistComponent},
@@ -60,7 +63,8 @@ const routes: Routes = [
     {path:'schoolteacherlisthod', component: SchoolteacherlisthodComponent},
     {path:'schoolteacherlistdean', component: SchoolteacherlistdeanComponent},
     {path:'schooldelete', component: SchooldeleteComponent}
-  ]}
+  ]},
+  {path:'homeafterlogin', component:HomeAfterLoginComponent}
 ];
 
 @NgModule({

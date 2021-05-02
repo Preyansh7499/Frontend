@@ -15,4 +15,5 @@ export class AppComponent {
       this.studentstatus = this.myLoginStatus.returnStudentStatus();
       console.log(this.studentstatus);
 }
+
 }

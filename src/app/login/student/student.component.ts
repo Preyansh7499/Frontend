@@ -48,7 +48,7 @@ export class StudentComponent implements OnInit {
             this.Status = this.myLoginStatus.checkStatusStudent(s.loggedIn)
             console.log(this.Status);              
             console.log("Success");
-            this.router.navigate(['/home']);
+            this.router.navigate(['/homeafterlogin']);
         }
         else{
           alert("Login Failed");

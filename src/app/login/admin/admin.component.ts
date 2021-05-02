@@ -19,7 +19,6 @@ export class AdminComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmitAdmin(data:any){
-    alert("clicked");
     console.log(data);
     this.Id = data.Id;
     this.HashPassword = data.HashPassword;
@@ -41,6 +40,17 @@ export class AdminComponent implements OnInit {
     this.myLoginApi.checkPassword(User).subscribe(
       (s:any) => {
         console.log(s);
+        if(s.loggedIn == true)
+        {     
+            console.log("Success");
+            alert("Logged in Successfully");
+            localStorage.setItem('isLoggedin', 'true');
+            this.router.navigate(['/homeafterlogin']);
+        }
+        else{
+          localStorage.setItem('isLoggedin', 'false');
+          alert("Log in Failed");
+        }
       }
     )
     

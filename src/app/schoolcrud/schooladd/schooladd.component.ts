@@ -41,8 +41,8 @@ export class SchooladdComponent implements OnInit {
 
   ngOnInit(): void {
     this.schoolAddForm = new FormGroup({
-      sname: new FormControl(),
-      bname: new FormControl()
+      schoolName: new FormControl(),
+      buildingName: new FormControl()
     })
   }
 }

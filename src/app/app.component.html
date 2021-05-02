@@ -4,9 +4,7 @@
 
 
   <li><a routerLink="/home" routerLinkActive = "active">Home</a></li>
-  <li><a routerLink="/Students" routerLinkActive = "active">Students</a></li>
-  <li><a routerLink="/teachercrud" routerLinkActive = "active">Teachers</a></li>
-  <li><a routerLink="/schoolcrud" routerLinkActive = "active">Schools</a></li>
+
   
   <li *ngIf = "studentstatus; else login">
       <a routerLink="/login" routerLinkActive = "active">Logout</a>

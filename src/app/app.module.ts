@@ -34,6 +34,7 @@ import { SchooladdComponent } from './schoolcrud/schooladd/schooladd.component';
 import { SchoolteacherlisthodComponent } from './schoolcrud/schoolteacherlisthod/schoolteacherlisthod.component';
 import { SchoolteacherlistdeanComponent } from './schoolcrud/schoolteacherlistdean/schoolteacherlistdean.component';
 import { SchooldeleteComponent } from './schoolcrud/schooldelete/schooldelete.component';
+import { HomeAfterLoginComponent } from './home-after-login/home-after-login.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { SchooldeleteComponent } from './schoolcrud/schooldelete/schooldelete.co
     SchooladdComponent,
     SchoolteacherlisthodComponent,
     SchoolteacherlistdeanComponent,
-    SchooldeleteComponent
+    SchooldeleteComponent,
+    HomeAfterLoginComponent
   ],
   imports: [
     BrowserModule,

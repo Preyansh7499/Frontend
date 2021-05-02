@@ -1,0 +1,44 @@
+<nav *ngIf = "StudentStatus; else teacher">
+    <h1>Welcome to Student Home Page</h1>
+    <br><br>
+    <li><a routerLink="/Students" routerLinkActive = "active">Students</a></li>
+    <br><br>
+    <li><a routerLink="/teachercrud" routerLinkActive = "active">Teachers</a></li>
+    <br><br>
+    <li><a routerLink="/schoolcrud" routerLinkActive = "active">Schools</a></li>
+    <br><br>
+    <li><button value= "Logout" (clicked) = "Logout()">Logout</button></li>
+    <br><br>
+ <router-outlet></router-outlet>
+</nav>
+
+
+
+
+<ng-template #teacher>
+<nav *ngIf = "TeacherStatus; else general">
+    <h1 >Welcome to teacher Home Page</h1>
+    <br><br>
+    <li><a routerLink="/Students" routerLinkActive = "active">Students</a></li>
+    <br><br>
+    <li><button value= "Logout" (clicked) = "Logout()">Logout</button></li>
+    <br><br>
+ <router-outlet></router-outlet>
+</nav>
+</ng-template>
+
+<ng-template #general>
+<h1>This is Admin Home Page</h1>
+<nav>
+    <br><br>
+    <li><a routerLink="/Students" routerLinkActive = "active">Students</a></li>
+    <br><br>
+    <li><a routerLink="/teachercrud" routerLinkActive = "active">Teachers</a></li>
+    <br><br>
+    <li><a routerLink="/schoolcrud" routerLinkActive = "active">Schools</a></li>
+    <br><br>
+    <li><button value= "Logout" (clicked) = "Logout()"> Logout</button></li>
+    <br><br>
+ <router-outlet></router-outlet>
+</nav>
+</ng-template>
