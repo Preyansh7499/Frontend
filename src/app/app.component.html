@@ -1,24 +1,28 @@
-<h1 class = "c1" Highlight>Deployment V2</h1>
-<nav>
-  <ul>
-
-
-  <li><a routerLink="/home" routerLinkActive = "active">Home</a></li>
-  <li><a routerLink="/Students" routerLinkActive = "active">Students</a></li>
-  <li><a routerLink="/teachercrud" routerLinkActive = "active">Teacher</a></li>
-  <li><a routerLink="/schoolcrud" routerLinkActive = "active">Schools</a></li>
-  <li><a routerLink="/Register">Register</a></li>
-  <li><a routerLink="/CoursePage">Course Page</a></li>
-  <li *ngIf = "studentstatus; else login">
-      <a routerLink="/login" routerLinkActive = "active">Logout</a>
-  </li>
-
-  <ng-template #login>
-      <li><a routerLink="/login" routerLinkActive = "active">Login</a></li>
-  </ng-template>
-  
-
-  </ul>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">VTop</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" routerLink="/home" routerLinkActive = "active">Home</a>
+        <a class="nav-link" routerLink="/Students" routerLinkActive = "active">Students</a>
+        <a class="nav-link" routerLink="/teachercrud" routerLinkActive = "active">Teacher</a>
+        <a class="nav-link" routerLink="/schoolcrud" routerLinkActive = "active">Schools</a>
+        <a class="nav-link" routerLink="/Register">Register</a>
+        <a class="nav-link" routerLink="/CoursePage">Course Page</a>
+        <span *ngIf = "studentstatus; else login">
+          <a class="nav-link" routerLink="/login" routerLinkActive = "active">Logout</a>
+        </span>
+        <ng-template #login>
+          <a class="nav-link" routerLink="/login" routerLinkActive = "active">Login</a>
+      </ng-template>
+        
+      </div>
+    </div>
+  </div>
+ 
 <router-outlet></router-outlet>
 </nav>
 <router-outlet></router-outlet>
