@@ -52,6 +52,7 @@ import { SchooladdComponent } from './schoolcrud/schooladd/schooladd.component';
 import { SchoolteacherlisthodComponent } from './schoolcrud/schoolteacherlisthod/schoolteacherlisthod.component';
 import { SchoolteacherlistdeanComponent } from './schoolcrud/schoolteacherlistdean/schoolteacherlistdean.component';
 import { SchooldeleteComponent } from './schoolcrud/schooldelete/schooldelete.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -100,6 +101,7 @@ import { SchooldeleteComponent } from './schoolcrud/schooldelete/schooldelete.co
     SchoolteacherlisthodComponent,
     SchoolteacherlistdeanComponent,
     SchooldeleteComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,

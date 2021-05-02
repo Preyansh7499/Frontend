@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { LoginStatusService } from './Services/login-status.service';
+import { AuthService } from './auth/auth.service';
+
 
 @Component({
   selector: 'app-root',
@@ -9,10 +10,9 @@ import { LoginStatusService } from './Services/login-status.service';
 export class AppComponent {
   title = 'Frontend';
 
-  studentstatus : boolean = false;
-
-  constructor(private myLoginStatus : LoginStatusService) {
-      this.studentstatus = this.myLoginStatus.returnStudentStatus();
-      console.log(this.studentstatus);
+  constructor(private authService:AuthService) {
+  }
+get isLoggedin(){
+  return this.authService.isLoggedin();
 }
 }

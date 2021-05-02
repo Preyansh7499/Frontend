@@ -42,6 +42,8 @@ import { SchooladdComponent } from './schoolcrud/schooladd/schooladd.component';
 import { SchoolteacherlisthodComponent } from './schoolcrud/schoolteacherlisthod/schoolteacherlisthod.component';
 import { SchoolteacherlistdeanComponent } from './schoolcrud/schoolteacherlistdean/schoolteacherlistdean.component';
 import { SchooldeleteComponent } from './schoolcrud/schooldelete/schooldelete.component';
+import { AuthGuard } from './auth/auth.guard';
+import { LogoutComponent } from './logout/logout.component';
 
 const routes: Routes = [
   {path:'login', component:LoginComponent,
@@ -52,7 +54,7 @@ const routes: Routes = [
   ]
   },
   {path : 'home', component:HomeComponent},
-  
+  {path : 'logout', component: LogoutComponent},
   { 
     path:'Students',component:StudentViewComponent,
     children:
@@ -89,6 +91,7 @@ const routes: Routes = [
   },
   
   {path:'teachercrud', component:TeachercrudComponent,
+  canActivate:[AuthGuard],
   children:[
     {path:'teacherlist', component:TeacherlistComponent},
     {path:'teacheradd', component: TeacheraddComponent},
