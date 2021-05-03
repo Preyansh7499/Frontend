@@ -49,7 +49,7 @@ export class TeacherupdatebyidComponent implements OnInit {
 
   ngOnInit(): void {
     this.teacherUpdateForm = new FormGroup({
-      name: new FormControl,
+      name: new FormControl(),
       emailid: new FormControl(),
       schoolid: new FormControl(),
       designationid: new FormControl()    

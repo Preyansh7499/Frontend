@@ -1,4 +1,4 @@
-<p>teaching-list works!</p>
+
 <div>
     <div *ngIf="teacherCourses; else Loading">
         <table>
@@ -14,7 +14,7 @@
                 <td>{{c.course.credits}}</td>
                 <td>{{c.course.courseType}}</td>
                 <td>{{c.course.courseStatus}}</td>
-                <td><button class="btn btn-danger" >Details</button></td>
+                <td><a  class="btn btn-danger" routerLink = "../../StudentInTheCourse/{{c.taughtById}}">Details </a></td>
             </tr>
         </table>
     </div>

@@ -28,4 +28,8 @@ export class CoursesService {
     let enrollUrl = this.registeredUrl+"/"+sid+"/Enroll/"+tbyid;
     return this.http.get(enrollUrl);
   }
+  GetStudentByTaughtId(tbyid){
+    let listurl = this.registeredUrl + "/StudentList/" + tbyid;
+    return this.http.get(listurl);
+  }
 }

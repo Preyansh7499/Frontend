@@ -17,4 +17,14 @@ export class CourseDetailsService {
     let attendanceUrl:string = baseUrl+regid;
     return this.http.get(attendanceUrl);
   }
+  updateMarks(regid : any, mark : any){
+    let baseUrl:string = "http://localhost:36820/api/Registered/";
+    let marksUrl:string = baseUrl+regid+"/Marks";
+    return this.http.put(marksUrl, mark);
+  }
+  addMarks(regid : any, mark : any){
+    let baseUrl:string = "http://localhost:36820/api/Registered/";
+    let marksUrl:string = baseUrl+regid+"/Marks";
+    return this.http.post(marksUrl, mark);
+  }
 }

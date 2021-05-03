@@ -1,0 +1,39 @@
+<div *ngIf = "marks; else add">
+<form [formGroup]="updateForm" (ngSubmit)="onSubmitUpdate(updateForm.value)">
+
+    <label>Review 1 :</label>
+    <input type="number" required placeholder="Review - 1" formControlName = "review1">
+    <br>
+
+    <label>Review 2 :</label>
+    <input type="number" required placeholder="Review - 2" formControlName = "review2">
+    <br>
+
+    <label>Review 3 :</label>
+    <input type="number" required placeholder="Review - 3" formControlName = "review3">
+    <br>
+
+    
+    <input type="submit" value = "Update">
+    
+</form>
+</div>
+
+<ng-template #add>
+    <form [formGroup]="addForm" (ngSubmit)="onSubmitAdd(addForm.value)">
+
+        <label>Review 1 :</label>
+        <input type="number" required placeholder="Review - 1" formControlName = "review1">
+        <br>
+    
+        <label>Review 2 :</label>
+        <input type="number" required placeholder="Review - 2" formControlName = "review2">
+        <br>
+    
+        <label>Review 3 :</label>
+        <input type="number" required placeholder="Review - 3" formControlName = "review3">
+        <br>
+
+        <input type="submit" value = "Add">
+    </form>
+</ng-template>

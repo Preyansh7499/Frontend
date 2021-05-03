@@ -1,0 +1,25 @@
+
+<div>
+    <div *ngIf="studentlist; else Loading">
+        <table>
+            <tr>
+                <th>Student ID</th>
+                <th>Student Name</th>
+                <th>Student Email Id</th>
+                <th>marks</th>
+
+            </tr>
+            <tr *ngFor="let s of studentlist">
+                <td>{{s.student.studentId}}</td>
+                <td>{{s.student.name}}</td>
+                <td>{{s.student.emailid}}</td>
+                <td><a  class="btn btn-danger" routerLink = "../../FinalStudentMarksUpdate/{{s.registerdId}}">Update Marks</a></td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+<ng-template #Loading>
+<h1>..loading</h1>
+</ng-template>

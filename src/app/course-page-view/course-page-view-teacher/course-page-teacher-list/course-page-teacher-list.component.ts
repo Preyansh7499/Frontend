@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TeacherRegisterService } from 'src/app/Services/teacher-register.service';
 
 @Component({
@@ -13,7 +13,7 @@ export class CoursePageTeacherListComponent implements OnInit {
   tid:any;
   teacherCourses:any;
 
-  constructor(ar:ActivatedRoute,private teacherRegister:TeacherRegisterService) {
+  constructor(ar:ActivatedRoute,private teacherRegister:TeacherRegisterService, private router : Router) {
     this.tid = ar.snapshot.params.id;
     this.loadCourses();
    }
