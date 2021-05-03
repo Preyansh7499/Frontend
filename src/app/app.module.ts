@@ -57,6 +57,9 @@ import { CoursePageViewComponent } from './course-page-view/course-page-view.com
 import { CoursePageViewTeacherComponent } from './course-page-view/course-page-view-teacher/course-page-view-teacher.component';
 import { CoursePageViewStudentComponent } from './course-page-view/course-page-view-student/course-page-view-student.component';
 import { ProfileComponent } from './profile/profile.component';
+import { EnrolledCoursesComponent } from './course-page-view/course-page-view-student/enrolled-courses/enrolled-courses.component';
+import { DetailsEnrolledCourseComponent } from './course-page-view/course-page-view-student/details-enrolled-course/details-enrolled-course.component';
+import { CoursePageTeacherListComponent } from './course-page-view/course-page-view-teacher/course-page-teacher-list/course-page-teacher-list.component';
 
 @NgModule({
   declarations: [
@@ -110,6 +113,9 @@ import { ProfileComponent } from './profile/profile.component';
     CoursePageViewTeacherComponent,
     CoursePageViewStudentComponent,
     ProfileComponent,
+    EnrolledCoursesComponent,
+    DetailsEnrolledCourseComponent,
+    CoursePageTeacherListComponent,
   ],
   imports: [
     BrowserModule,
