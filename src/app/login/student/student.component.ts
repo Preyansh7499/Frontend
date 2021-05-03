@@ -44,15 +44,16 @@ export class StudentComponent implements OnInit {
     this.myLoginApi.checkPassword(User).subscribe(
       (s:any) => {
         console.log(s);
-        if(s.loggedIn == true)
-        { 
-            this.Status = this.myLoginStatus.checkStatusStudent(s.loggedIn)
-            console.log(this.Status);              
-            console.log("Success");
-            this.router.navigate(['/home']);
+        if(s.loggedIn)
+        {
+          localStorage.setItem('isLoggedin','true');
+          localStorage.setItem("userId",s.user.id);
+          localStorage.setItem("userType",s.user.type);
+          this.router.navigate(['/home']);
+          
         }
         else{
-          alert("Login Failed");
+          alert("Not correct pair of user id and password");
         }
 
       }

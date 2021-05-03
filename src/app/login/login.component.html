@@ -1,16 +1,36 @@
-<h1>Main Page</h1>
-<nav>
-    <ul>
-        <li><a routerLink="/login/admin" routerLinkActive = "active" Highlight>Admin </a></li>
-        <br>
-        <br>
-        <li><a routerLink="/login/teacher" routerLinkActive = "active" Highlight>Teacher</a></li>
-        <br>
-        <br>
-        <li><a routerLink="/login/student" routerLinkActive = "active" Highlight>Student</a></li>
-        <br>
-        <br>
-    </ul>
+<div class="container-fluid" id="Board">
+    <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <div class="position-sticky pt-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" routerLink="/login/admin" routerLinkActive="active">
+                          <span data-feather="home"></span>
+                          Admin
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" routerLink="/login/teacher" routerLinkActive="active">
+                          <span data-feather="home"></span>
+                          Teacher
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" routerLink="/login/student" routerLinkActive="active">
+                          <span data-feather="home"></span>
+                          Student
+                        </a>
+                    </li>
+                   
+                </ul>
 
-</nav>  
-<router-outlet></router-outlet>
+            </div>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <router-outlet></router-outlet>
+        </main>
+    </div>
+</div>
+
+

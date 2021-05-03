@@ -51,6 +51,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { EnrolledCoursesComponent } from './course-page-view/course-page-view-student/enrolled-courses/enrolled-courses.component';
 import { DetailsEnrolledCourseComponent } from './course-page-view/course-page-view-student/details-enrolled-course/details-enrolled-course.component';
 import { CoursePageTeacherListComponent } from './course-page-view/course-page-view-teacher/course-page-teacher-list/course-page-teacher-list.component';
+import { AuthStudentGuard } from './auth/auth-student.guard';
+import { AuthAdminGuard } from './auth/auth-admin.guard';
+import { AuthTeacherGuard } from './auth/auth-teacher.guard';
 
 const routes: Routes = [
   {path:'login', component:LoginComponent,
@@ -63,7 +66,7 @@ const routes: Routes = [
   {path : 'home', component:HomeComponent},
   {path : 'logout', component: LogoutComponent},
   { 
-    path:'Students',component:StudentViewComponent,
+    path:'Students',component:StudentViewComponent,canActivate:[AuthAdminGuard],
     children:
     [
       {path :'List',component:StudentListComponent},
@@ -78,7 +81,7 @@ const routes: Routes = [
     ]
   },
   {
-    path:'Register',component:RegisterComponent,
+    path:'Register',component:RegisterComponent,canActivate:[AuthAdminGuard],
     children:
     [
       {path:'Student',component:RegisterStudentComponent,children:[
@@ -97,7 +100,16 @@ const routes: Routes = [
     ]
   },
   {
-    path:'CoursePage',component:CoursePageViewComponent,children:[
+    path:'StudentCoursePage/:id',component:EnrolledCoursesComponent,canActivate:[AuthStudentGuard]
+  },
+  {
+    path:'Details/:regid',component:DetailsEnrolledCourseComponent,canActivate:[AuthStudentGuard]
+  },
+  {
+    path:'TeacherCoursePage/:id',component:CoursePageTeacherListComponent,canActivate:[AuthTeacherGuard]
+  },
+  {
+    path:'CoursePage',component:CoursePageViewComponent,canActivate:[AuthAdminGuard],children:[
       {path:'Student',component:CoursePageViewStudentComponent,children:[
         {path:"EnrolledCourses/:id",component:EnrolledCoursesComponent},
         {path:"Details/:regid",component:DetailsEnrolledCourseComponent}
@@ -111,7 +123,7 @@ const routes: Routes = [
     path:'Profile',component:ProfileComponent
   },
   {path:'teachercrud', component:TeachercrudComponent,
-  canActivate:[AuthGuard],
+  canActivate:[AuthAdminGuard],
   children:[
     {path:'teacherlist', component:TeacherlistComponent},
     {path:'teacheradd', component: TeacheraddComponent},
@@ -122,7 +134,7 @@ const routes: Routes = [
   ]
   },
   
-  {path:'schoolcrud', component:SchoolcrudComponent,
+  {path:'schoolcrud', component:SchoolcrudComponent,canActivate:[AuthAdminGuard],
    children:[
     {path:'schoollist', component:SchoollistComponent},
     {path:'schooldetails/:id', component:SchooldetailsComponent},

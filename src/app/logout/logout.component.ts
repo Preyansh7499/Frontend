@@ -15,6 +15,8 @@ export class LogoutComponent implements OnInit {
 
   yes(){
     localStorage.setItem('isLoggedin', 'false');
+    localStorage.removeItem("userType");
+    localStorage.removeItem("userId");
     this.route.navigate(['/login']);
   }
   no(){
