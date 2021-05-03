@@ -1,0 +1,42 @@
+{{regId}}
+<h1>
+    Attendance
+</h1>
+<div *ngIf="Attendance; else NoAttendance">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8 progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: {{percentage}}%">
+                    Attendance: {{percentage}}%
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <button>
+                    Records
+                  </button>
+                  
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<ng-template #NoAttendance>
+    <div class="alert alert-warning">
+        No Attendance set
+    </div>
+</ng-template>
+
+<h1>
+    Marks
+</h1>
+<div *ngIf="Marks; else NoMarks">
+    <h5>Review 1:{{Marks.review1}}</h5>
+    <h5>Review 2:{{Marks.review2}}</h5>
+    <h5>Review 3:{{Marks.review3}}</h5>
+</div>
+<ng-template #NoMarks>
+    <div class="alert alert-warning">
+        No Marks set
+    </div>
+</ng-template>
