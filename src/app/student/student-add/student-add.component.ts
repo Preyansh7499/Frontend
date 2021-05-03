@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { DegreeService } from 'src/app/Services/degree.service';
 import { SchoolService } from 'src/app/Services/school.service';
 import { StudentService } from 'src/app/Services/student.service';
@@ -16,7 +16,7 @@ export class StudentAddComponent implements OnInit {
   degrees:any;
   studentAddForm:FormGroup;
 
-  constructor(private studentService:StudentService,private schoolService:SchoolService,private degreeService:DegreeService) {
+  constructor(private studentService:StudentService,private schoolService:SchoolService,private degreeService:DegreeService, private fb : FormBuilder) {
    
     schoolService.getSchools().subscribe(
       (res)=>{this.schools = res; console.log(res);},
@@ -32,19 +32,33 @@ export class StudentAddComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.studentAddForm = new FormGroup({
-      name:new FormControl(),
-      yearOfJoining:new FormControl(),
-      dateOfBirth:new FormControl(),
-      password:new FormControl(),
-      degreeId:new FormControl(),
-      schoolId:new FormControl(),
-      emailid:new FormControl()      
-    });
+      this.studentAddForm = this.fb.group({
+      name: ["",Validators.required],
+      yearOfJoining:["",Validators.required],
+      dateOfBirth:["",Validators.required],
+      password:["",Validators.required],
+      confirmPassword:["",Validators.required],
+      degreeId:["",Validators.required],
+      schoolId:["",Validators.required],
+      emailid:["",Validators.required],    
+    },
+    );
   }
   onSubmit(data){
+   
     data.password = this.HashPassword(data.password);
-    this.studentService.addStudent(data).subscribe(
+
+    let User = {
+      name: data.name,
+      emailid:data.emailid,
+      yearOfJoining:data.yearOfJoining,
+      dateOfBirth: data.dateOfBirth,
+      password: data.password,
+      degreeId:data.degreeId,
+      schoolId:data.schoolId,
+    };
+
+    this.studentService.addStudent(User).subscribe(
       (res)=>{alert("Student Added");},
       (err)=>{alert("error occured");console.log(err);}
     );    

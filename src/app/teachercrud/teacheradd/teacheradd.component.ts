@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { TeacherService } from 'src/app/Services/teacher.service';
+import { SchoolService } from 'src/app/Services/school.service';
 import { Md5 } from 'ts-md5';
 
 @Component({
@@ -10,8 +11,14 @@ import { Md5 } from 'ts-md5';
 })
 export class TeacheraddComponent implements OnInit {
   teacherAddForm : FormGroup;
+  schools :any;
 
-  constructor(private teacherService : TeacherService) { }
+  constructor(private teacherService : TeacherService, private schoolService:SchoolService ) {
+    schoolService.getSchools().subscribe(
+      (res)=>{this.schools = res; console.log(res);},
+      (err)=>{alert("Fetching School caused an error");console.log(err);}
+    );
+   }
 
   ngOnInit(): void {
     this.teacherAddForm = new FormGroup({

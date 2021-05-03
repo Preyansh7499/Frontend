@@ -45,9 +45,6 @@ export class TeacherComponent implements OnInit {
         console.log(s);
         if(s.loggedIn == true)
         { 
-            this.Status = this.myLoginStatus.checkStatusteacher(s.loggedIn);
-            console.log(this.Status);              
-            console.log("Success");
             localStorage.setItem('isLoggedin','true');
             this.router.navigate(['/home']);
         }

@@ -4,30 +4,38 @@
     <div class="form-group">
         <label>Name</label><br>
         <input class="form-control" type="text" required placeholder="Name" formControlName = "name">
+        <span style = "color:red" *ngIf="studentAddForm.controls.name.errors?.required">Enter Name</span>
     </div>
     <div class="form-group">
         <label>Email</label><br>
         <input class="form-control" type="email" required placeholder="Email" formControlName = "emailid">
+        <span style = "color:red" *ngIf="studentAddForm.controls.emailid.errors?.required">Enter E-mail</span>
     </div>
     
     <div class="form-group">
         <label>Year of joining</label><br>
-        <input class="form-control" type="number" required placeholder="Year"  formControlName = "yearOfJoining">       
+        <input class="form-control" type="number" required placeholder="Year"  formControlName = "yearOfJoining"> 
+        <span style = "color:red;" *ngIf="studentAddForm.controls.yearOfJoining.errors?.required">Enter Year Of Joining</span>      
     </div>
     <div class="form-group">
         <label>Date of Birth</label><br>
         <input class="form-control" type="date" required formControlName = "dateOfBirth">     
+        <span style = "color:red" *ngIf="studentAddForm.controls.dateOfBirth.errors?.required">Enter Date Of Birth</span> 
     </div>
 
     <div class="form-group">
         <label>Password</label><br>
         <input  class="form-control" type="password" required formControlName = "password">
+        <span style = "color:red" *ngIf="studentAddForm.controls.password.errors?.required">Enter Password</span>
     
     </div>
 
     <div class="form-group">
         <label>Confirm Password</label><br>
-        <input  class="form-control" type="password" required>
+        <input  class="form-control" type="password" required formControlName = "confirmPassword">
+        <div style="color: red;"  *ngIf="studentAddForm.value.password !== studentAddForm.value.confirmPassword">
+            Passwords do not match
+        </div>
         
     </div>
 
