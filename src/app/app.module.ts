@@ -53,6 +53,10 @@ import { SchoolteacherlisthodComponent } from './schoolcrud/schoolteacherlisthod
 import { SchoolteacherlistdeanComponent } from './schoolcrud/schoolteacherlistdean/schoolteacherlistdean.component';
 import { SchooldeleteComponent } from './schoolcrud/schooldelete/schooldelete.component';
 import { LogoutComponent } from './logout/logout.component';
+import { CoursePageViewComponent } from './course-page-view/course-page-view.component';
+import { CoursePageViewTeacherComponent } from './course-page-view/course-page-view-teacher/course-page-view-teacher.component';
+import { CoursePageViewStudentComponent } from './course-page-view/course-page-view-student/course-page-view-student.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -102,6 +106,10 @@ import { LogoutComponent } from './logout/logout.component';
     SchoolteacherlistdeanComponent,
     SchooldeleteComponent,
     LogoutComponent,
+    CoursePageViewComponent,
+    CoursePageViewTeacherComponent,
+    CoursePageViewStudentComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

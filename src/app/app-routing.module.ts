@@ -44,6 +44,10 @@ import { SchoolteacherlistdeanComponent } from './schoolcrud/schoolteacherlistde
 import { SchooldeleteComponent } from './schoolcrud/schooldelete/schooldelete.component';
 import { AuthGuard } from './auth/auth.guard';
 import { LogoutComponent } from './logout/logout.component';
+import { CoursePageViewComponent } from './course-page-view/course-page-view.component';
+import { CoursePageViewStudentComponent } from './course-page-view/course-page-view-student/course-page-view-student.component';
+import { CoursePageViewTeacherComponent } from './course-page-view/course-page-view-teacher/course-page-view-teacher.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {path:'login', component:LoginComponent,
@@ -89,7 +93,15 @@ const routes: Routes = [
       }
     ]
   },
-  
+  {
+    path:'CoursePage',component:CoursePageViewComponent,children:[
+      {path:'Student',component:CoursePageViewStudentComponent},
+      {path:'Teacher',component:CoursePageViewTeacherComponent}
+    ]
+  },
+  {
+    path:'Profile',component:ProfileComponent
+  },
   {path:'teachercrud', component:TeachercrudComponent,
   canActivate:[AuthGuard],
   children:[
