@@ -48,6 +48,9 @@ import { CoursePageViewComponent } from './course-page-view/course-page-view.com
 import { CoursePageViewStudentComponent } from './course-page-view/course-page-view-student/course-page-view-student.component';
 import { CoursePageViewTeacherComponent } from './course-page-view/course-page-view-teacher/course-page-view-teacher.component';
 import { ProfileComponent } from './profile/profile.component';
+import { EnrolledCoursesComponent } from './course-page-view/course-page-view-student/enrolled-courses/enrolled-courses.component';
+import { DetailsEnrolledCourseComponent } from './course-page-view/course-page-view-student/details-enrolled-course/details-enrolled-course.component';
+import { CoursePageTeacherListComponent } from './course-page-view/course-page-view-teacher/course-page-teacher-list/course-page-teacher-list.component';
 
 const routes: Routes = [
   {path:'login', component:LoginComponent,
@@ -95,8 +98,13 @@ const routes: Routes = [
   },
   {
     path:'CoursePage',component:CoursePageViewComponent,children:[
-      {path:'Student',component:CoursePageViewStudentComponent},
-      {path:'Teacher',component:CoursePageViewTeacherComponent}
+      {path:'Student',component:CoursePageViewStudentComponent,children:[
+        {path:"EnrolledCourses/:id",component:EnrolledCoursesComponent},
+        {path:"Details/:regid",component:DetailsEnrolledCourseComponent}
+      ]},
+      {path:'Teacher',component:CoursePageViewTeacherComponent,children:[
+        {path:"EnrolledList/:id",component:CoursePageTeacherListComponent}
+      ]}
     ]
   },
   {

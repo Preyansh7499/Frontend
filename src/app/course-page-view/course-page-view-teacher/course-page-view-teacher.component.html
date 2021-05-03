@@ -1,1 +1,20 @@
-<p>course-page-view-teacher works!</p>
+<h1>Teacher</h1>
+
+<form [formGroup]="teacherIdForm" (ngSubmit)="onSubmitId(teacherIdForm.value)">
+    <input required type="number" formControlName="teacherId">
+    <input type="submit">
+</form>
+
+<div *ngIf="teacher; else select">
+    <app-teacher-view-card [teacher]="teacher"></app-teacher-view-card>
+    <nav>
+        <a class="btn btn-dark" routerLink="EnrolledList/{{tid}}" (click)="refresh()">Courses</a>
+    </nav>
+
+</div>
+<ng-template #select>
+    <h1>Select valid Teacher id</h1>
+</ng-template>
+<div *ngIf="show">
+    <router-outlet></router-outlet>
+</div>
