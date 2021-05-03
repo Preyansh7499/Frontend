@@ -54,6 +54,8 @@ import { CoursePageTeacherListComponent } from './course-page-view/course-page-v
 import { AuthStudentGuard } from './auth/auth-student.guard';
 import { AuthAdminGuard } from './auth/auth-admin.guard';
 import { AuthTeacherGuard } from './auth/auth-teacher.guard';
+import { ProfileStudentComponent } from './profile-student/profile-student.component';
+import { ProfileTeacherComponent } from './profile-teacher/profile-teacher.component';
 
 const routes: Routes = [
   {path:'login', component:LoginComponent,
@@ -120,7 +122,10 @@ const routes: Routes = [
     ]
   },
   {
-    path:'Profile',component:ProfileComponent
+    path:'ProfileStudent',component:ProfileStudentComponent
+  },
+  {
+    path:'ProfileTeacher',component:ProfileTeacherComponent
   },
   {path:'teachercrud', component:TeachercrudComponent,
   canActivate:[AuthAdminGuard],

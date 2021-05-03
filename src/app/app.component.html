@@ -70,6 +70,7 @@
         <div class="navbar-nav">
           <a class="nav-link" routerLink="/home" routerLinkActive = "active">Home</a>
           <a class="nav-link" routerLink="/StudentCoursePage/{{getUserId()}}" routerLinkActive = "active">Course Page</a>
+          <a class="nav-link" routerLink="/ProfileStudent" routerLinkActive = "active">Profile</a>
           <span *ngIf = "isLoggedin; else login">
             <a class="nav-link" routerLink="/logout" routerLinkActive = "active">Logout</a>
           </span>
@@ -97,6 +98,7 @@
         <div class="navbar-nav">
           <a class="nav-link" routerLink="/home" routerLinkActive = "active">Home</a>
           <a class="nav-link" routerLink="TeacherCoursePage/{{getUserId()}}" routerLinkActive = "active">Course Page</a>
+          <a class="nav-link" routerLink="/ProfileTeacher" routerLinkActive = "active">Profile</a>
           <span *ngIf = "isLoggedin; else login">
             <a class="nav-link" routerLink="/logout" routerLinkActive = "active">Logout</a>
           </span>

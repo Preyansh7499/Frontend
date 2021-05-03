@@ -60,6 +60,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { EnrolledCoursesComponent } from './course-page-view/course-page-view-student/enrolled-courses/enrolled-courses.component';
 import { DetailsEnrolledCourseComponent } from './course-page-view/course-page-view-student/details-enrolled-course/details-enrolled-course.component';
 import { CoursePageTeacherListComponent } from './course-page-view/course-page-view-teacher/course-page-teacher-list/course-page-teacher-list.component';
+import { ProfileStudentComponent } from './profile-student/profile-student.component';
+import { ProfileTeacherComponent } from './profile-teacher/profile-teacher.component';
 
 @NgModule({
   declarations: [
@@ -116,6 +118,8 @@ import { CoursePageTeacherListComponent } from './course-page-view/course-page-v
     EnrolledCoursesComponent,
     DetailsEnrolledCourseComponent,
     CoursePageTeacherListComponent,
+    ProfileStudentComponent,
+    ProfileTeacherComponent,
   ],
   imports: [
     BrowserModule,
