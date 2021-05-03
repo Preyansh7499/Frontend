@@ -56,6 +56,8 @@ import { AuthAdminGuard } from './auth/auth-admin.guard';
 import { AuthTeacherGuard } from './auth/auth-teacher.guard';
 import { FinalStudentListComponent } from './course-page-view/course-page-view-teacher/final-student-list/final-student-list.component';
 import { FinalMarksUpdateComponent } from './course-page-view/course-page-view-teacher/final-marks-update/final-marks-update.component';
+import { ProfileStudentComponent } from './profile-student/profile-student.component';
+import { ProfileTeacherComponent } from './profile-teacher/profile-teacher.component';
 
 const routes: Routes = [
   {path:'login', component:LoginComponent,
@@ -125,7 +127,13 @@ const routes: Routes = [
     ]
   },
   {
-    path:'Profile',component:ProfileComponent
+    path:'ProfileStudent',component:ProfileStudentComponent
+  },
+  {
+    path:'ProfileTeacher',component:ProfileTeacherComponent
+  },
+  {
+    path:'ProfileAdmin',component:ProfileTeacherComponent
   },
   {path:'teachercrud', component:TeachercrudComponent,
   canActivate:[AuthAdminGuard],

@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    <div class="row">
+        <div *ngIf="student; else loading">
+            <hr>
+                <h1>Student Details</h1>
+                Name:{{student.name}}<br>
+                Register number:{{student.registerNumber}}<br>
+                Id : {{student.studentId}}<br>
+                Email Id: {{student.emailid}}<br>
+            <hr>
+            <h1>Proctor Details</h1>
+            <app-teacher-view-card [teacher]="student.proctor"></app-teacher-view-card>
+            <h1>Degree Details</h1>
+            <app-degree-view-card [degree]="student.degree"></app-degree-view-card>
+            <h1>School Details</h1>
+            <app-school-view-card [school]="student.school"></app-school-view-card>
+            
+        </div>
+        <ng-template #loading>
+            <h1>...Loading</h1>
+        </ng-template>
+        
+    </div>
+</div>

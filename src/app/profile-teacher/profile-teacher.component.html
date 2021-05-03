@@ -1,0 +1,14 @@
+<div class="container-fluid">
+    <div class="row">
+        <div *ngIf="teacher; else loading">
+            <h1>Teacher Details</h1>
+            <app-teacher-view-card [teacher]="teacher"></app-teacher-view-card>
+            <h1>School Details</h1>
+            <app-school-view-card [school]="teacherSchool"></app-school-view-card>
+        </div>
+        <ng-template #loading>
+            <h1>...Loading</h1>
+        </ng-template>
+        
+    </div>
+</div>

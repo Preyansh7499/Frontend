@@ -63,6 +63,8 @@ import { CoursePageTeacherListComponent } from './course-page-view/course-page-v
 import { FinalStudentListComponent } from './course-page-view/course-page-view-teacher/final-student-list/final-student-list.component';
 import { FinalMarksUpdateComponent } from './course-page-view/course-page-view-teacher/final-marks-update/final-marks-update.component';
 
+import { ProfileStudentComponent } from './profile-student/profile-student.component';
+import { ProfileTeacherComponent } from './profile-teacher/profile-teacher.component';
 
 @NgModule({
   declarations: [
@@ -120,7 +122,9 @@ import { FinalMarksUpdateComponent } from './course-page-view/course-page-view-t
     DetailsEnrolledCourseComponent,
     CoursePageTeacherListComponent,
     FinalStudentListComponent,
-    FinalMarksUpdateComponent
+    FinalMarksUpdateComponent,
+    ProfileStudentComponent,
+    ProfileTeacherComponent,
   ],
   imports: [
     BrowserModule,
