@@ -127,6 +127,9 @@ const routes: Routes = [
   {
     path:'ProfileTeacher',component:ProfileTeacherComponent
   },
+  {
+    path:'ProfileAdmin',component:ProfileTeacherComponent
+  },
   {path:'teachercrud', component:TeachercrudComponent,
   canActivate:[AuthAdminGuard],
   children:[
