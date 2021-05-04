@@ -10,13 +10,11 @@
     <label>Review 2 :</label>
     <input type="number" required placeholder="Review - 2" formControlName = "review2">
     <br>
-    <br>
     <p style="color: red;" *ngIf="updateForm.controls.review2.errors?.review2">Marks must be greater than 0 and less than or equal to 30</p>
     <br>
 
     <label>Review 3 :</label>
     <input type="number" required placeholder="Review - 3" formControlName = "review3">
-    <br>
     <br>
     <p style="color: red;" *ngIf="updateForm.controls.review3.errors?.review3">Marks must be greater than 0 and less than or equal to 50</p>
     <br>
@@ -30,27 +28,26 @@
 <ng-template #add>
     <form [formGroup]="addForm" (ngSubmit)="onSubmitAdd(addForm.value)">
 
+        <br>
+
         <label>Review 1 :</label>
         <input type="number" required placeholder="Review - 1" formControlName = "review1">
         <br>
-        <p style="color: red;" *ngIf="updateForm.controls.review1.errors?.review1">Marks must be greater than 0 and less than or equal to 20</p>
-        <br>
+        <p style="color: red;" *ngIf="addForm.controls.review1.errors?.review1">Marks must be greater than 0 and less than or equal to 20</p>
         <br>
     
         <label>Review 2 :</label>
         <input type="number" required placeholder="Review - 2" formControlName = "review2">
         <br>
-        <p style="color: red;" *ngIf="updateForm.controls.review2.errors?.review2">Marks must be greater than 0 and less than or equal to 30</p>
-        <br>
+        <p style="color: red;" *ngIf="addForm.controls.review2.errors?.review2">Marks must be greater than 0 and less than or equal to 30</p>
         <br>
     
         <label>Review 3 :</label>
         <input type="number" required placeholder="Review - 3" formControlName = "review3">
         <br>
-        <p style="color: red;" *ngIf="updateForm.controls.review3.errors?.review3">Marks must be greater than 0 and less than or equal to 50</p>
-        <br>
+        <p style="color: red;" *ngIf="addForm.controls.review3.errors?.review3">Marks must be greater than 0 and less than or equal to 50</p>
         <br>
 
-        <input type="submit" value = "Add">
+        <input type="submit" value = "Add" [disabled] = "addForm.invalid">
     </form>
 </ng-template>
