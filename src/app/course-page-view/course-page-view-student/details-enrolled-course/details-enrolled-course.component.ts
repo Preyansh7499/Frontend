@@ -20,7 +20,7 @@ export class DetailsEnrolledCourseComponent implements OnInit {
   constructor(ar:ActivatedRoute,private courseDetailsService:CourseDetailsService) {
     this.regId = ar.snapshot.params.regid;
     courseDetailsService.getAttendance(this.regId).subscribe(
-      (res)=>{this.Attendance = res; this.percentage = this.Attendance.attendancePercentage;console.log(res);},
+      (res)=>{this.Attendance = res; console.log(this.Attendance);this.percentage = this.Attendance.attendancePercentage;console.log(res);},
       (err)=>{console.log(err);}
     );
      courseDetailsService.getMarks(this.regId).subscribe(
