@@ -34,7 +34,7 @@ export class EnrollComponent implements OnInit {
     let cid = this.EnrollCourseForm.get('courseId').value;
     
     this.courseService.getTeachersByCourseId(cid).subscribe(
-      (res)=>this.taughtBy = res,
+      (res)=>{this.taughtBy = res;console.log(res);},
       (err)=>alert("select a course first")
       
     );

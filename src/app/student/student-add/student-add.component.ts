@@ -59,7 +59,7 @@ export class StudentAddComponent implements OnInit {
     };
 
     this.studentService.addStudent(User).subscribe(
-      (res)=>{alert("Student Added");},
+      (res)=>{this.studentAddForm.reset();},
       (err)=>{alert("error occured");console.log(err);}
     );    
   }
