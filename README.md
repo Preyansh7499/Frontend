@@ -1,3 +1,11 @@
+#Notes
+<h1> How Api was made </h1>
+
+![How Api was Made](https://user-images.githubusercontent.com/80598054/116984617-11261d00-ace9-11eb-802f-857328e46569.JPG)
+
+<h1>Use Case Diagram</h1>[Use Case diagram and Views.pdf](https://github.com/Preyansh7499/Frontend/files/6420134/Use.Case.diagram.and.Views.pdf)
+
+
 # Frontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.9.
