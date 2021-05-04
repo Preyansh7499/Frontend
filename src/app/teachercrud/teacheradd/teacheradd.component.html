@@ -3,25 +3,41 @@
     <label>Name</label><br>
     <input type="text" required placeholder="Name" formControlName = "name">
     <br>
+    <span style = "color:red" *ngIf="teacherAddForm.controls.name.errors?.required">Enter Name</span>
+    <br>
 
     <label>Email</label><br>
     <input type="email" required placeholder="Email" formControlName = "emailid">
     <br>
+    <span style = "color:red" *ngIf="teacherAddForm.controls.emailid.errors?.required">Enter E-mail</span>
+    <br>
 
-    <label>SchoolId</label><br>
-    <input type="number" required placeholder="SchoolId" formControlName = "schoolid">
+    <label>Select School Id</label>
+    <br>
+    <select  required formControlName = "schoolId">
+        <option *ngFor="let school of schools" [value]="school.schoolId">{{school.schoolName}}</option>
+    </select>
+    <br>
+    <span style = "color:red" *ngIf="teacherAddForm.controls.schoolId.errors?.required">Select a school</span>
     <br>
 
     <label>DesignationId</label><br>
-    <input type="number" required placeholder="DesignationId" formControlName = "designationid">
+    <input type="number" required placeholder="DesignationId" formControlName = "designationId">
     <br>
 
     <label>Password</label><br>
     <input type="password" required formControlName = "password">
     <br>
+    <span style = "color:red" *ngIf="teacherAddForm.controls.password.errors?.required">Enter Password</span>
+    <br>
 
     <label>Confirm Password</label><br>
-    <input type="password" required>
+    <input type="password" required formControlName = "confirmPassword">
+    <br>
+    
+    <div style="color: red;"  *ngIf="teacherAddForm.value.password !== teacherAddForm.value.confirmPassword">
+        Passwords do not match
+    </div>
     <br>
 <br>
     <input class="btn btn-success" type="submit">
