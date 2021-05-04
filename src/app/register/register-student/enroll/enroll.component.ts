@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CoursesService } from 'src/app/Services/courses.service';
 
@@ -26,8 +26,8 @@ export class EnrollComponent implements OnInit {
 
     this.EnrollCourseForm = new FormGroup(
       {
-        courseId : new FormControl(),
-        taughtById:new FormControl()
+        courseId : new FormControl("",Validators.required),
+        taughtById:new FormControl("",Validators.required)
       });
   }
   loadTeachers(){

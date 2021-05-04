@@ -4,6 +4,8 @@
         <option *ngFor="let c of courses" [value]="c.courseId">{{c.courseId}} {{c.courseName}}</option>
     </select>
     <br>
+    <span style = "color:red" *ngIf="EnrollCourseForm.controls.courseId.errors?.required">Select the course first</span>
+    <br>
     Teachers
     <br>
     <select (click)="loadTeachers()" required formControlName ="taughtById">
@@ -11,6 +13,8 @@
         <option *ngFor="let t of taughtBy" [value]=t.taughtById>{{t.teacher.registerNumber}} {{t.teacher.name}}</option>
     </select>
     <br>
+    <span style = "color:red" *ngIf="EnrollCourseForm.controls.taughtById.errors?.required">Select the teacher</span>
     <br>
-    <input class="btn btn-success" type="submit" value="enroll">
+    <br>
+    <input class="btn btn-success" type="submit" value="enroll" [disabled]="EnrollCourseForm.invalid">
 </form>
