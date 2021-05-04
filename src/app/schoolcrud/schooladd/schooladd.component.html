@@ -3,13 +3,16 @@
     <label>Name</label><br>
     <input type="text" required placeholder="School Name" formControlName = "schoolName">
     <br>
-
+    <span style = "color:red" *ngIf="schoolAddForm.controls.schoolName.errors?.required">Enter School Name</span>
+    <br>
     <label>Building Name</label><br>
     <input type="text" required placeholder="Building Name" formControlName = "buildingName">
     <br>
+    <span style = "color:red" *ngIf="schoolAddForm.controls.buildingName.errors?.required">Enter Building Name</span>
     <br>
 
-    <input class="btn btn-success" value="Add" type="submit">
+
+    <input class="btn btn-success" value="Add" type="submit" [disabled]="schoolAddForm.invalid">
 </form>
 <br><br>
 
