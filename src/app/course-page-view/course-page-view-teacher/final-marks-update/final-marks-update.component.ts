@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Form, FormControl, FormGroup } from '@angular/forms';
+import { Form, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { CourseDetailsService } from 'src/app/Services/course-details.service';
 
@@ -35,15 +35,15 @@ export class FinalMarksUpdateComponent implements OnInit {
 
   ngOnInit(): void {
     this.updateForm = new FormGroup({
-      review1 : new FormControl(),
-      review2 : new FormControl(),
-      review3 : new FormControl(),
+      review1 : new FormControl("",Validators.compose([Validators.required, this.r1Validator])),
+      review2 : new FormControl("",Validators.compose([Validators.required, this.r2Validator])),
+      review3 : new FormControl("",Validators.compose([Validators.required, this.r3Validator])),
     })
 
     this.addForm = new FormGroup({
-      review1 : new FormControl(),
-      review2 : new FormControl(),
-      review3 : new FormControl(),
+      review1 : new FormControl("",Validators.compose([Validators.required, this.r1Validator])),
+      review2 : new FormControl("",Validators.compose([Validators.required, this.r2Validator])),
+      review3 : new FormControl("",Validators.compose([Validators.required, this.r3Validator])),
     })
   }
 
@@ -96,6 +96,50 @@ export class FinalMarksUpdateComponent implements OnInit {
         console.log(err);
       }
     )
-
   }
+
+
+  r1Validator(m:any){
+    let mark = m.value;
+    console.log(mark);
+    let min = 0;
+    let max = 20;
+    if(mark >= min && mark <= max){
+      console.log("valid");
+      return null;
+    }
+    else{
+      console.log("Invalid");
+      return {'review1' : true};
+    }
+  }
+  r2Validator(m:any){
+    let mark = m.value;
+    console.log(mark);
+    let min = 0;
+    let max = 30;
+    if(mark >= min && mark <= max){
+      console.log("valid");
+      return null;
+    }
+    else{
+      console.log("Invalid");
+      return {'review2' : true};
+    }
+  }
+  r3Validator(m:any){
+    let mark = m.value;
+    console.log(mark);
+    let min = 0;
+    let max = 50;
+    if(mark >= min && mark <= max){
+      console.log("valid");
+      return null;
+    }
+    else{
+      console.log("Invalid");
+      return {'review3' : true};
+    }
+  }
+
 }

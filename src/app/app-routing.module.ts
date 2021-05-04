@@ -73,11 +73,11 @@ const routes: Routes = [
     path:'Students',component:StudentViewComponent,canActivate:[AuthAdminGuard],
     children:
     [
-      {path :'List',component:StudentListComponent},
-      {path :'Details/:id',component:StudentDetailsComponent},
-      {path: 'Add',component:StudentAddComponent},
-      {path: 'Update',component:StudentUpdateComponent},
-      {path: 'Update/:id',component:StudentUpdateComponent},
+      {path:'List',component:StudentListComponent},
+      {path:'Details/:id',component:StudentDetailsComponent},
+      {path:'Add',component:StudentAddComponent},
+      {path:'Update',component:StudentUpdateComponent},
+      {path:'Update/:id',component:StudentUpdateComponent},
       {path:'Delete',component:StudentDeleteComponent},
       {path:'Delete/:id',component:StudentDeleteComponent},
       {path:'Proctor',component:SetProctorComponent},
@@ -112,6 +112,8 @@ const routes: Routes = [
   {
     path:'TeacherCoursePage/:id',component:CoursePageTeacherListComponent,canActivate:[AuthTeacherGuard]
   },
+  {path:"StudentInTheCourse/:id",component: FinalStudentListComponent},
+  {path:"FinalStudentMarksUpdate/:id", component: FinalMarksUpdateComponent},
   {
     path:'CoursePage',component:CoursePageViewComponent,canActivate:[AuthAdminGuard],children:[
       {path:'Student',component:CoursePageViewStudentComponent,children:[
