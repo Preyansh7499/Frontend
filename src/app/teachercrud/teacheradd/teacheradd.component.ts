@@ -53,6 +53,8 @@ export class TeacheraddComponent implements OnInit {
       }
     )
   }
+
+
   HashPassword(pass:string){
     const md5 = new Md5();
     return md5.appendStr(pass).end();
